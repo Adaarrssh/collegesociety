@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Follow Kr Lala Follow Kr</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Tone.js for micro-interactions (sound effect) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+    <style>
+      /* New Dark & Softer Background (Haze/Synthwave Vibe) */
+      body {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Inter", sans-serif;
+        background-color: #0d001a; /* Dark violet-blue for a softer dark mode */
+        /* Subtle radial gradient for a dreamy, hazy depth */
+        background-image: radial-gradient(
+            circle at 50% 50%,
+            rgba(13, 0, 26, 0.5) 0%,
+            rgba(0, 0, 0, 0) 100%
+          ),
+          linear-gradient(180deg, #180033 0%, #0d001a 100%);
+        color: #e0e0e0; /* Slightly lighter text for readability */
+        /* FIX: Prevents horizontal scrolling/jank on vertical scroll, keeping the screen stable */
+        overflow-x: hidden;
+      }
+
+      /* Softer Magenta/Amber Glow */
+      .neon-glow-primary {
+        /* Now using deep pink/magenta for a richer, softer glow */
+        text-shadow: 0 0 3px #e879f9, 0 0 8px #e879f9,
+          0 0 15px rgba(232, 121, 249, 0.5);
+        transition: all 0.2s ease-in-out;
+      }
+
+      /* CTA Button Styling */
+      .cta-button {
+        /* Reduced outer shadow */
+        box-shadow: 0 0 10px rgba(251, 191, 36, 0.5); /* Amber shadow */
+        filter: contrast(1.2);
+      }
+      .cta-button:hover {
+        /* Reduced hover shadow - Fuchsia/Amber mix */
+        box-shadow: 0 0 15px rgba(232, 121, 249, 0.6),
+          0 0 5px rgba(251, 191, 36, 0.6);
+      }
+
+      .neon-border {
+        border: 2px solid #e879f9; /* Fuchsia border */
+        /* Reduced box shadow and inner shadow */
+        box-shadow: 0 0 8px #e879f9, inset 0 0 4px #e879f9;
+        transition: all 0.3s ease;
+      }
+      .neon-border:hover {
+        border-color: #f59e0b; /* Amber on hover */
+        box-shadow: 0 0 15px #f59e0b, inset 0 0 8px #f59e0b;
+      }
+
+      /* Mobile-friendly layout */
+      .main-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .content-card {
+        max-width: 800px;
+        width: 100%;
+      }
+
+      /* --- GLITCH & FLICKER ANIMATION (Kept subtle) --- */
+      @keyframes glitch-fx {
+        0% {
+          transform: translate(1px, 1px) scale(1);
+          opacity: 1;
+        }
+        10% {
+          transform: translate(-1px, 0px) scale(1.02);
+          opacity: 0.98;
+        }
+        20% {
+          transform: translate(0px, 1px) scale(1);
+          opacity: 1;
+        }
+        30% {
+          transform: translate(1px, -1px) scale(1.01);
+          opacity: 0.99;
+        }
+        31% {
+          filter: brightness(1.2);
+        }
+        32% {
+          filter: brightness(1);
+        }
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 1;
+        }
+      }
+      .glitch-text {
+        animation: glitch-fx 3s linear infinite;
+      }
+    </style>
+  </head>
+  <body class="text-gray-100">
+    <!-- Main Container - Centered and Responsive -->
+    <div class="main-container">
+      <!-- Society Card/Content Area -->
+      <div
+        class="content-card bg-gray-900/50 p-8 sm:p-12 rounded-3xl neon-border border-opacity-30 backdrop-blur-sm"
+      >
+        <!-- Headline with Glitch Effect and Desi Vibe -->
+        <h1
+          class="text-5xl sm:text-7xl font-extrabold text-center mb-4 leading-none glitch-text"
+        >
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-amber-500 neon-glow-primary"
+          >
+            IT'S GIVING... FOLLOW 🔥
+          </span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-center text-gray-400 mb-8 font-mono">
+          // Department ka **exclusive server**. **OG** bano.
+        </p>
+
+        <!-- Value Proposition (Brainrot Content) -->
+        <div class="space-y-4 mb-10">
+          <!-- LINE 1: Internships & Resources (Fuchsia Accent) -->
+          <div
+            class="flex items-center space-x-3 p-4 bg-gray-900/70 rounded-xl border-l-4 border-fuchsia-400"
+          >
+            <span class="text-3xl text-fuchsia-400">💼</span>
+            <p class="text-lg font-medium">
+              Next **Internship** ki *scoop* chahiye?
+              <span class="text-amber-400 font-bold"
+                >**Free resources** aur **cheat codes** yahin.</span
+              >
+            </p>
+          </div>
+
+          <!-- LINE 2: Skills & Mentorship (Amber Accent) -->
+          <div
+            class="flex items-center space-x-3 p-4 bg-gray-900/70 rounded-xl border-l-4 border-amber-400"
+          >
+            <span class="text-3xl text-amber-400">💻</span>
+            <p class="text-lg font-medium">
+              **Coding/Skills** ka *flex* karna hai?
+              <span class="text-fuchsia-400 font-bold"
+                >**Next-level projects** aur **senior mentorship**.</span
+              >
+            </p>
+          </div>
+
+          <!-- LINE 3: Networking/Future (Fuchsia Accent) -->
+          <div
+            class="flex items-center space-x-3 p-4 bg-gray-900/70 rounded-xl border-l-4 border-fuchsia-400"
+          >
+            <span class="text-3xl text-fuchsia-400">🚀</span>
+            <p class="text-lg font-medium">
+              Top **Alumni** se **connect** hona hai?
+              <span class="text-amber-400 font-bold"
+                >Career ka **roadmap** aur **chai pe charcha**.</span
+              >
+            </p>
+          </div>
+
+          <!-- LINE 4: Chill & Free Snacks (Amber Accent) -->
+          <div
+            class="flex items-center space-x-3 p-4 bg-gray-900/70 rounded-xl border-l-4 border-amber-400"
+          >
+            <span class="text-3xl text-amber-400">🍕</span>
+            <p class="text-lg font-medium">
+              **Pizza** aur **free chai-samosa** ka jugaad?
+              <span class="text-fuchsia-400 font-bold"
+                >Chill **meetups** aur **exclusive senior vibes**.</span
+              >
+            </p>
+          </div>
+
+          <!-- LINE 5: Department Events & Gossip (Fuchsia Accent) -->
+          <div
+            class="flex items-center space-x-3 p-4 bg-gray-900/70 rounded-xl border-l-4 border-fuchsia-400"
+          >
+            <span class="text-3xl text-fuchsia-400">🤫</span>
+            <p class="text-lg font-medium">
+              Department ka **sabse bada event** miss karna hai?
+              <span class="text-amber-400 font-bold"
+                >**Timely alerts** aur **inside gossip**.</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="flex flex-col space-y-4">
+          <!-- Main Instagram Button (Fuchsia to Amber Gradient) -->
+          <a
+            id="follow-link"
+            href="https://instagram.com/iotclubmiet"
+            target="_blank"
+            class="cta-button w-full text-center py-4 px-6 rounded-2xl text-2xl font-extrabold uppercase transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.98] bg-gradient-to-r from-fuchsia-500 to-amber-500 hover:from-fuchsia-400 hover:to-amber-400 text-gray-900"
+            onclick="playClickSound()"
+          >
+            CHAL NIKAL, FOLLOW KAR. 🔥
+            <span id="handle-display">@IoT club miet</span>
+          </a>
+
+          <!-- Copy to Clipboard Button (Fuchsia/Amber style) -->
+          <button
+            id="copy-button"
+            class="w-full py-3 px-6 rounded-xl text-lg font-semibold bg-gray-800/80 text-fuchsia-300 neon-border border-opacity-70 hover:bg-gray-700/90"
+            onclick="copyHandle()"
+          >
+            Copy Handle (It's simpler, *trust me*.)
+          </button>
+        </div>
+
+        <!-- Message Box for Alerts (Amber background) -->
+        <div
+          id="message-box"
+          class="fixed bottom-4 left-1/2 transform -translate-x-1/2 p-3 rounded-xl bg-amber-500 text-gray-900 font-bold shadow-2xl opacity-0 transition-opacity duration-300 pointer-events-none"
+          style="z-index: 100"
+        >
+          Handle Copied! ✅
+        </div>
+      </div>
+
+      <!-- Subtle Footer Text -->
+      <p class="mt-8 text-sm text-gray-600 font-mono">
+        > Connection secured. Status: Online. No cap.
+      </p>
+    </div>
+
+    <script>
+      // --- Configuration ---
+      // !!! IMPORTANT: CHANGE THIS TO YOUR SOCIETY'S ACTUAL INSTAGRAM HANDLE !!!
+      const INSTAGRAM_HANDLE = "@iotclubmiet";
+      const FOLLOW_LINK = `https://instagram.com/${INSTAGRAM_HANDLE.substring(
+        1
+      )}`;
+
+      // Ensure the link is correct
+      document.getElementById("follow-link").href = FOLLOW_LINK;
+      document.getElementById("handle-display").textContent = INSTAGRAM_HANDLE;
+
+      // --- Message Box / Notification Handler ---
+      function showMessage(text, isError = false) {
+        const msgBox = document.getElementById("message-box");
+        msgBox.textContent = text;
+
+        // Reset and apply colors
+        msgBox.classList.remove(
+          "opacity-0",
+          "bg-red-500",
+          "bg-lime-500",
+          "bg-amber-500",
+          "text-white",
+          "text-gray-900"
+        );
+        if (isError) {
+          msgBox.classList.add("bg-red-500", "text-white");
+        } else {
+          msgBox.classList.add("bg-amber-500", "text-gray-900"); // Changed to Amber
+        }
+
+        msgBox.classList.add("opacity-100");
+
+        setTimeout(() => {
+          msgBox.classList.remove("opacity-100");
+          msgBox.classList.add("opacity-0");
+        }, 3000);
+      }
+
+      // --- Tone.js Sound Effect (Sharp Digital Chime) ---
+      let clickSynth;
+      let isToneReady = false;
+
+      window.onload = function () {
+        try {
+          // Initialize Tone.js for a sharp, high-pitched digital chime/alert
+          clickSynth = new Tone.PolySynth(Tone.Synth, {
+            oscillator: { type: "square" },
+            envelope: {
+              attack: 0.001,
+              decay: 0.03,
+              sustain: 0.005,
+              release: 0.05,
+            },
+          }).toDestination();
+          isToneReady = true;
+          console.log("Tone.js initialized with high-attack square wave.");
+        } catch (e) {
+          console.error("Tone.js failed to initialize:", e);
+        }
+      };
+
+      function playClickSound() {
+        if (isToneReady && Tone.context.state !== "running") {
+          Tone.start().then(() => {
+            if (clickSynth) {
+              clickSynth.triggerAttackRelease(["D6", "A6"], "64n");
+            }
+          });
+        } else if (isToneReady && clickSynth) {
+          clickSynth.triggerAttackRelease(["D6", "A6"], "64n");
+        }
+      }
+
+      // --- Clipboard Functionality ---
+      function copyHandle() {
+        playClickSound();
+        const handleText = INSTAGRAM_HANDLE;
+
+        try {
+          const tempInput = document.createElement("textarea");
+          tempInput.value = handleText;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand("copy");
+          document.body.removeChild(tempInput);
+          showMessage(`'${INSTAGRAM_HANDLE}' copied! Slay.`);
+        } catch (err) {
+          console.error("Failed to copy text:", err);
+          navigator.clipboard
+            .writeText(handleText)
+            .then(() => {
+              showMessage(`'${INSTAGRAM_HANDLE}' copied! Slay.`);
+            })
+            .catch(() => {
+              showMessage("Couldn't copy. Manual input required. 😭", true);
+            });
+        }
+      }
+    </script>
+  </body>
+</html>
